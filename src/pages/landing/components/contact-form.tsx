@@ -32,7 +32,7 @@ const ContactForm: React.FC = () => {
         <Paper shadow="md" p="xl" ta="left" id="contact">
             <Grid>
                 <Grid.Col span={{base: 12}}>
-                    <Title order={2}>Let's build something together</Title>
+                    <Title order={2}>Construisons ensemble</Title>
                     <Space h={10}/>
                     <Text size="md">Currently available for freelance opportunities or full-time roles. Drop me a message and I'll get back to you within 24 hours.</Text>
                     <Space h={10}/>
