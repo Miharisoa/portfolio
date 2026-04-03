@@ -1,8 +1,18 @@
-import { Anchor, Button, Card, Grid, Group, Image, Text } from "@mantine/core";
+import { Anchor, Button, Card, Grid, Group, Image, List, Modal, SimpleGrid, Space, Text, Title } from "@mantine/core";
 import type { Project } from "../interfaces/common.interface";
 import { PROJECTS } from "../constants/projects.constant";
+import { useDisclosure } from "@mantine/hooks";
+import { useState } from "react";
 
 const ProjectList: React.FC = () => {
+    const [opened, { open, close }] = useDisclosure(false);
+    const [selectedProject, setSelectedProject] = useState<Project|null>(null);
+
+    const handleOpenModal = (item: Project) => {
+        setSelectedProject(item);
+        open();
+    }
+
     return (
         <>
             <Grid id="projects">
@@ -25,13 +35,30 @@ const ProjectList: React.FC = () => {
                                 {project.description}
                             </Text>
 
-                            <Button color="blue" fullWidth mt="md" radius="md">
+                            <Button color="blue" fullWidth mt="md" radius="md" onClick={() => handleOpenModal(project)}>
                                 Voir le projet
                             </Button>
                         </Card>
                     </Grid.Col>
                 ))}
             </Grid>
+            {selectedProject && <Modal opened={opened} onClose={close} title={
+                <Title order={2}>{selectedProject.name}</Title>
+            } fullScreen>
+                <SimpleGrid cols={3}>
+                    {selectedProject.screenshots.map((s: string, i: number) => (<Image height={300} key={`capture-${i}`} src={s} />))}
+                </SimpleGrid>
+                <Space h={30} />
+                <Title order={4}>Contexte & objectif</Title>
+                <Text>{selectedProject.context}</Text>
+
+                <Space h={30} />
+                <Title order={4}>Principaux fonctionnalités</Title>
+                <List>
+                    {selectedProject.features.map((f: string, i: number) => (<List.Item key={`features-${i}`}>{f}</List.Item>))}
+                </List>
+                
+            </Modal>}
         </>
     );
 }
