@@ -14,8 +14,8 @@ const Layout: React.FC<LayoutProps> = ({children}) => {
                 <Group h="100%" align="center" px="md" justify="space-around">
                     <Title c="cyan" order={3}>&lt;Dev.JS /&gt;</Title>
                     <Group gap="lg">
-                        <Anchor className="header-link" href="#projects">Projects</Anchor>
-                        <Anchor className="header-link" href="#stacks">Stacks</Anchor>
+                        <Anchor className="header-link" href="#projects">Compétences</Anchor>
+                        <Anchor className="header-link" href="#stacks">Projets</Anchor>
                         <Anchor className="header-link" href="#contact">Contact</Anchor>
                     </Group>
                 </Group>
