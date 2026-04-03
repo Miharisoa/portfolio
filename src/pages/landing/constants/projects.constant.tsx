@@ -28,7 +28,7 @@ export const PROJECTS: Project[] = [
         name: "Backoffice - Cité des cultures",
         description: "Backoffice sur mesure qui sert d'outils d'administration pour la Cité des Cultures à Madagascar",
         image: bo1,
-        url: "https://citedescultures.com/",
+        url: "#", // https://backoffice.citedescultures.com/
         context: "Ce projet a été développé pour répondre au besoin de le Cité des Cultures souhaitant centraliser et faciliter la gestion de ses activités.",
         features: [
             "Gestion des contenus pour le site vitrine",

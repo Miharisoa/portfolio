@@ -43,7 +43,7 @@ const ProjectList: React.FC = () => {
                 ))}
             </Grid>
             {selectedProject && <Modal opened={opened} onClose={close} title={
-                <Title order={2}>{selectedProject.name}</Title>
+                <Anchor href={selectedProject.url} target="_blank"><Title order={2}>{selectedProject.name}</Title></Anchor>
             } fullScreen>
                 <SimpleGrid cols={3}>
                     {selectedProject.screenshots.map((s: string, i: number) => (<Image fit="contain" height={300} key={`capture-${i}`} src={s} />))}
