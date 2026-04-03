@@ -1,5 +1,7 @@
+import { IconDownload } from "@tabler/icons-react";
 import { Stack, Image, Text, Title, Group, Button } from "@mantine/core";
 import profilePic from '../../../assets/profil.jpeg';
+import cv from "../../../assets/cv.pdf";
 
 const Hero: React.FC = () => {
     return (
@@ -16,7 +18,7 @@ const Hero: React.FC = () => {
             
             <Group mt="lg">
                 <Button color="green" size="md" component="a" href="https://wa.me/0341024425?text=Bonjour%20j'aimerais%20discuter%20de%20mon%20projet">Me contacter sur WhatsApp</Button>
-                <Button size="md" variant="outline">Télécharger mon CV</Button>
+                <Button size="md" variant="outline" component="a" href={cv} leftSection={<IconDownload size={18} />}>Télécharger mon CV</Button>
             </Group>
         </Stack>
     );
