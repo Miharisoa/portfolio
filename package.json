@@ -17,6 +17,7 @@
     "@mantine/hooks": "^8.3.16",
     "@mantine/modals": "^8.3.16",
     "@mantine/notifications": "^8.3.16",
+    "@tabler/icons-react": "^3.41.1",
     "gh-pages": "^6.3.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
