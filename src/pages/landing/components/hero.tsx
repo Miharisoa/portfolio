@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
             </Text>
             
             <Group mt="lg">
-                <Button size="md" component="a" href="https://wa.me/0341024425?text=Bonjour%20j'aimerais%20discuter%20de%20mon%20projet">Me contacter sur WhatsApp</Button>
+                <Button color="green" size="md" component="a" href="https://wa.me/0341024425?text=Bonjour%20j'aimerais%20discuter%20de%20mon%20projet">Me contacter sur WhatsApp</Button>
                 <Button size="md" variant="outline">Télécharger mon CV</Button>
             </Group>
         </Stack>

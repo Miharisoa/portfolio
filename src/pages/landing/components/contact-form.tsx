@@ -1,4 +1,5 @@
-import { Grid, Paper, Space, Text, Title } from "@mantine/core";
+import { Card, Group, Stack, ThemeIcon, Text } from "@mantine/core";
+import { IconMail, IconBrandWhatsapp } from "@tabler/icons-react";
 // import { Button, Grid, Paper, Space, Stack, Text, Textarea, TextInput, Title } from "@mantine/core";
 // import { useState } from "react";
 
@@ -29,42 +30,52 @@ const ContactForm: React.FC = () => {
     // }
 
     return (
-        <Paper shadow="md" p="xl" ta="left" id="contact">
-            <Grid>
-                <Grid.Col span={{base: 12}}>
-                    <Title order={2}>Construisons ensemble</Title>
-                    <Space h={10}/>
-                    <Text size="md">Currently available for freelance opportunities or full-time roles. Drop me a message and I'll get back to you within 24 hours.</Text>
-                    <Space h={10}/>
-                    <Text size="sm" c="cyan">raharitsiresy@gmail.com</Text>
-                    <Text size="sm" c="cyan">+261 34 10 244 25</Text>
-                </Grid.Col>
-                {/* <Grid.Col span={{base: 12, md: 6}}>
-                    <Stack>
-                        <TextInput
-                            label="Votre nom"
-                            value={formData.name}
-                            onChange={(e) => handleChange("name")(e.currentTarget.value)}
-                            required 
-                        />
-                        <TextInput
-                            label="Votre e-mail"
-                            value={formData.email}
-                            onChange={(e) => handleChange("email")(e.currentTarget.value)}
-                            required
-                        />
-                        <Textarea
-                            label="Message"
-                            value={formData.message}
-                            onChange={(e) => handleChange("message")(e.currentTarget.value)}
-                            rows={10}>
-                        </Textarea> 
-                    <Button mt="md" onClick={handleMailto}>Envoyer</Button>
-                    </Stack>
-                </Grid.Col> */}
-            </Grid>
-        </Paper>
+        <ContactCard
+          name="Miharisoa RAHARITSIRESY"
+          email="raharitsiresy@gmail.com"
+          phone="+261 34 10 244 25"
+          whatsapp="0341024425"
+        />
     );
 }
 
 export default ContactForm;
+
+interface ContactCardProps {
+  name: string;
+  email: string;
+  phone: string;
+  whatsapp?: string; // numéro complet sans + ni espaces
+}
+
+export function ContactCard({ name, email, phone, whatsapp }: ContactCardProps) {
+  return (
+    <Card shadow="sm" padding="lg" radius="md" withBorder>
+      <Stack gap="sm">
+        <Text w={700} size="lg">{name}</Text>
+
+        <Group gap="sm" align="center">
+          <ThemeIcon color="blue" variant="light" radius="xl">
+            <IconMail size={16} />
+          </ThemeIcon>
+          <Text>
+            <a href={`mailto:${email}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+              {email}
+            </a>
+          </Text>
+        </Group>
+
+        <Group gap="sm" align="center">
+          <ThemeIcon color="teal" variant="light" radius="xl">
+            <IconBrandWhatsapp size={16} />
+          </ThemeIcon>
+          <Text>
+            <a href={`https://wa.me/${whatsapp}?text=${encodeURIComponent("Bonjour, je souhaite vous contacter")}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+              {phone}
+            </a>
+          </Text>
+        </Group>
+      </Stack>
+    </Card>
+  );
+}
