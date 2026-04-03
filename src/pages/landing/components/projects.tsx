@@ -46,7 +46,7 @@ const ProjectList: React.FC = () => {
                 <Title order={2}>{selectedProject.name}</Title>
             } fullScreen>
                 <SimpleGrid cols={3}>
-                    {selectedProject.screenshots.map((s: string, i: number) => (<Image height={300} key={`capture-${i}`} src={s} />))}
+                    {selectedProject.screenshots.map((s: string, i: number) => (<Image fit="contain" height={300} key={`capture-${i}`} src={s} />))}
                 </SimpleGrid>
                 <Space h={30} />
                 <Title order={4}>Contexte & objectif</Title>

@@ -30,14 +30,17 @@ const Portfolio: React.FC = () => {
                         <Container ta="center">
                             {/* EXPERIENCES */}
                             <Title>Projets</Title>
-                            <Text c="dimmed">Quelques projets clients auxquels j'ai participé</Text>
+                            <Space h={20} />
+                            <Text c="dimmed">Voici une sélection de projets clients auxquels j’ai contribué, illustrant mon savoir-faire et ma capacité à transformer des idées en solutions concrètes et efficaces.</Text>
                             <Space h={30}/>
                             <ProjectList />
                             <Space h={50}/>
 
                             {/* CONTACT */}
+                            <Space h={50}/>
                             <Title>Contact</Title>
-                            <Text c="dimmed">Une remarque ? une suggestion ? N'hésitez pas à m'écrire</Text>
+                            <Space h={20} />
+                            <Text c="dimmed">Chaque projet est unique, discutons ensemble de votre idée et construisons quelque chose d’exceptionnel.</Text>
                             <Space h={30}/>
                             <ContactForm />
                         </Container>
