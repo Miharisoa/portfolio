@@ -1,5 +1,5 @@
 import React from 'react';
-import { Space, Stack, Title, Text, Container } from '@mantine/core';
+import { Space, Stack, Title, Text, Container, Grid } from '@mantine/core';
 
 import Layout from './layout';
 import Hero from './components/hero';
@@ -42,7 +42,11 @@ const Portfolio: React.FC = () => {
                             <Space h={20} />
                             <Text c="dimmed">Chaque projet est unique, discutons ensemble de votre idée et construisons quelque chose d’exceptionnel.</Text>
                             <Space h={30}/>
-                            <ContactForm />
+                           <Grid>
+                            <Grid.Col span={{base: 12}}>
+                                <ContactForm />
+                            </Grid.Col>
+                            </Grid> 
                         </Container>
 
                     </Stack>

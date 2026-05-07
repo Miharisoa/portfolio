@@ -2,4 +2,22 @@
     padding: 0px 20px;
     font-weight: 500;
     color: dimgray;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.header-link:hover {
+    color: cyan;
+}
+
+/* Mobile responsive - reduce padding on smaller screens */
+@media (max-width: 576px) {
+    .header-link {
+        padding: 0px 10px;
+        font-size: 14px;
+    }
+    
+    .header-nav {
+        gap: 8px !important;
+    }
 }

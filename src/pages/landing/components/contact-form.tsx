@@ -52,7 +52,7 @@ export function ContactCard({ name, email, phone, whatsapp }: ContactCardProps) 
   return (
     <Card shadow="sm" padding="lg" radius="md" withBorder>
       <Stack gap="sm">
-        <Text w={700} size="lg">{name}</Text>
+        <Text fw={700} size="lg">{name}</Text>
 
         <Group gap="sm" align="center">
           <ThemeIcon color="blue" variant="light" radius="xl">
